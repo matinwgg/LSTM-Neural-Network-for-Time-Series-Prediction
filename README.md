@@ -1,25 +1,40 @@
-# LSTM Neural Network for Time Series Prediction
+# LSTM Neural Network for Time-Series Prediction
 
-LSTM built using the Keras Python package to predict time series steps and sequences. Includes sine wave and stock market data.
+An implementation-oriented study of recurrent neural networks and Long Short-Term Memory (LSTM) models for sequential and time-series prediction.
 
-[Full article write-up for this code](https://www.altumintelligence.com/articles/a/Time-Series-Prediction-Using-LSTM-Deep-Neural-Networks)
+## What it demonstrates
 
-[Video on the workings and usage of LSTMs and run-through of this code](https://www.youtube.com/watch?v=2np77NOdnwk)
+- sequence/window construction
+- recurrent state and temporal dependencies
+- LSTM gating intuition
+- multi-step and sequence prediction
+- sine-wave experiments
+- multidimensional stock-market time-series experiments
+- practical preprocessing and normalization
 
-## Requirements
+## Mathematics behind the model
 
-Install requirements.txt file to make sure correct versions of libraries are being used.
+The project connects recurrent learning to matrix multiplication, vector states, nonlinear activation functions, recurrence relations, gradient-based optimization, the chain rule, backpropagation through time, numerical stability, and sequence statistics.
 
-* Python 3.5.x
-* TensorFlow 1.10.0
-* Numpy 1.15.0
-* Keras 2.2.2
-* Matplotlib 2.2.2
+A useful abstraction is:
 
-Output for sine wave sequential prediction:
+`h_t = f(x_t, h_{t-1}; θ)`
 
-![Output for sin wave sequential prediction](https://www.altumintelligence.com/assets/time-series-prediction-using-lstm-deep-neural-networks/sinwave_full_seq.png)
+where the hidden state is a recursively updated representation of the sequence history. LSTM gates regulate how information is retained, forgotten, and exposed over time.
 
-Output for stock market multi-dimensional multi-sequential predictions:
+## Numerical considerations
 
-![Output for stock market multiple sequential predictions](https://www.altumintelligence.com/assets/time-series-prediction-using-lstm-deep-neural-networks/sp500_multi_2d.png)
+Time-series normalization must handle zero-valued baselines and non-finite values. Training and evaluation should avoid leakage from future observations into preprocessing statistics. Sequence length, batch size, learning rate, and recurrent-state initialization all affect optimization and generalization.
+
+## Historical implementation note
+
+The original project uses an older TensorFlow/Keras stack. Treat the supplied environment as a reproducibility target rather than a recommendation for a new production system.
+
+## References
+
+- [Original article](https://www.altumintelligence.com/articles/a/Time-Series-Prediction-Using-LSTM-Deep-Neural-Networks)
+- [Video walkthrough](https://www.youtube.com/watch?v=2np77NOdnwk)
+
+## Status
+
+**Machine-learning study project.** The repository is intended for learning, experimentation, and understanding recurrent neural-network mathematics.

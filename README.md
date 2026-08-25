@@ -1,40 +1,112 @@
 # LSTM Neural Network for Time-Series Prediction
 
-An implementation-oriented study of recurrent neural networks and Long Short-Term Memory (LSTM) models for sequential and time-series prediction.
+## 📖 About
 
-## What it demonstrates
+An implementation-oriented study of recurrent neural networks and Long Short-Term Memory (LSTM) models for sequential and time-series prediction. The repository is useful for understanding both the model mechanics and the mathematics of learning from temporal data.
 
-- sequence/window construction
-- recurrent state and temporal dependencies
-- LSTM gating intuition
-- multi-step and sequence prediction
-- sine-wave experiments
-- multidimensional stock-market time-series experiments
-- practical preprocessing and normalization
+### Why it exists
 
-## Mathematics behind the model
+Sequential prediction requires models to represent dependencies across time while managing unstable gradients and changing information relevance. This project uses LSTMs to make those ideas concrete through synthetic and financial time-series experiments.
 
-The project connects recurrent learning to matrix multiplication, vector states, nonlinear activation functions, recurrence relations, gradient-based optimization, the chain rule, backpropagation through time, numerical stability, and sequence statistics.
+## ✨ Features
 
-A useful abstraction is:
+- Sequence/window construction
+- Recurrent hidden-state modelling
+- LSTM gating mechanisms
+- Sequence and multi-step prediction experiments
+- Sine-wave experiments
+- Multidimensional stock-market time-series experiments
+- Practical preprocessing and normalization
 
-`h_t = f(x_t, h_{t-1}; θ)`
+## 🛠 Tech Stack
 
-where the hidden state is a recursively updated representation of the sequence history. LSTM gates regulate how information is retained, forgotten, and exposed over time.
+- Python
+- TensorFlow/Keras legacy stack used by the original implementation
+- NumPy
+- Matplotlib/data tooling used by the experiments
 
-## Numerical considerations
+## 🏗 Architecture
 
-Time-series normalization must handle zero-valued baselines and non-finite values. Training and evaluation should avoid leakage from future observations into preprocessing statistics. Sequence length, batch size, learning rate, and recurrent-state initialization all affect optimization and generalization.
+```text
+Raw time series
+      ↓
+Cleaning + normalization
+      ↓
+Sliding-window sequences
+      ↓
+LSTM recurrent model
+      ↓
+Gradient-based training / BPTT
+      ↓
+Prediction
+      ↓
+Time-series evaluation
+```
 
-## Historical implementation note
+## 📁 Project Structure
 
-The original project uses an older TensorFlow/Keras stack. Treat the supplied environment as a reproducibility target rather than a recommendation for a new production system.
+```text
+.
+├── *.py / notebooks   # Model and experiment code
+├── data/              # Input data where applicable
+├── models/            # Saved model artifacts where applicable
+└── README.md
+```
 
-## References
+## 📋 Prerequisites
+
+Use the historical environment specified by the project's dependency configuration. Modern TensorFlow versions may require code changes because the original implementation uses an older stack.
+
+## 🚀 Getting Started
+
+```bash
+git clone https://github.com/matinwgg/LSTM-Neural-Network-for-Time-Series-Prediction.git
+cd LSTM-Neural-Network-for-Time-Series-Prediction
+```
+
+Install the project's pinned/compatible dependencies before running the experiment scripts.
+
+## 💻 Usage
+
+Typical workflow:
+
+1. Prepare a chronological dataset.
+2. Fit preprocessing statistics using training data only.
+3. Construct fixed-length windows.
+4. Train the LSTM.
+5. Evaluate on temporally separated data.
+6. Plot predictions and report error metrics.
+
+## 🧮 Mathematics
+
+The core recurrence is `h_t = f(x_t, h_{t-1}; θ)`. LSTM gates control state transitions through sigmoid and elementwise operations. Training uses the chain rule and backpropagation through time; numerical behavior depends on sequence length, initialization, learning rate, and activation saturation.
+
+## 🧪 Testing / Evaluation
+
+Evaluation should avoid future-data leakage and should report metrics on a held-out chronological period. Preprocessing must handle zero-valued baselines and non-finite values.
+
+## 🚧 Limitations & Future Work
+
+- Modernize the TensorFlow stack
+- Add reproducible environment locking
+- Compare against GRU/Transformer baselines
+- Add walk-forward evaluation
+- Quantify uncertainty
+- Add systematic hyperparameter experiments
+
+## 📚 References
 
 - [Original article](https://www.altumintelligence.com/articles/a/Time-Series-Prediction-Using-LSTM-Deep-Neural-Networks)
 - [Video walkthrough](https://www.youtube.com/watch?v=2np77NOdnwk)
 
-## Status
+## 🤝 Contributing
 
-**Machine-learning study project.** The repository is intended for learning, experimentation, and understanding recurrent neural-network mathematics.
+Preserve chronological evaluation, document preprocessing, and add tests for numerical edge cases and data leakage.
+
+## 📄 License
+
+See repository license information.
+
+## 👨‍💻 Author
+
+**Matin Odoom**

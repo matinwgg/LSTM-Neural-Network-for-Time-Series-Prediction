@@ -1,14 +1,14 @@
 # LSTM Neural Network for Time-Series Prediction
 
-## 📖 About
+## About
 
-An implementation-oriented study of recurrent neural networks and Long Short-Term Memory (LSTM) models for sequential and time-series prediction. The repository is useful for understanding both the model mechanics and the mathematics of learning from temporal data.
+An implementation-oriented study of recurrent neural networks and Long Short-Term Memory (LSTM) models for sequential and time-series prediction. This repository helps in understanding both the model mechanics and the mathematics of learning from temporal data.
 
 ### Why it exists
 
 Sequential prediction requires models to represent dependencies across time while managing unstable gradients and changing information relevance. This project uses LSTMs to make those ideas concrete through synthetic and financial time-series experiments.
 
-## ✨ Features
+## Features
 
 - Sequence/window construction
 - Recurrent hidden-state modelling
@@ -16,16 +16,16 @@ Sequential prediction requires models to represent dependencies across time whil
 - Sequence and multi-step prediction experiments
 - Sine-wave experiments
 - Multidimensional stock-market time-series experiments
-- Practical preprocessing and normalization
+- Practical preprocessing and normalisation
 
-## 🛠 Tech Stack
+## Tech Stack
 
 - Python
 - TensorFlow/Keras legacy stack used by the original implementation
 - NumPy
 - Matplotlib/data tooling used by the experiments
 
-## 🏗 Architecture
+## Architecture
 
 ```text
 Raw time series
@@ -43,21 +43,21 @@ Prediction
 Time-series evaluation
 ```
 
-## 📁 Project Structure
+## Project Structure
 
 ```text
 .
 ├── *.py / notebooks   # Model and experiment code
 ├── data/              # Input data where applicable
-├── models/            # Saved model artifacts where applicable
+├── models/            # Saved model artefacts where applicable
 └── README.md
 ```
 
-## 📋 Prerequisites
+## Prerequisites
 
 Use the historical environment specified by the project's dependency configuration. Modern TensorFlow versions may require code changes because the original implementation uses an older stack.
 
-## 🚀 Getting Started
+## Getting Started
 
 ```bash
 git clone https://github.com/matinwgg/LSTM-Neural-Network-for-Time-Series-Prediction.git
@@ -66,7 +66,7 @@ cd LSTM-Neural-Network-for-Time-Series-Prediction
 
 Install the project's pinned/compatible dependencies before running the experiment scripts.
 
-## 💻 Usage
+## Usage
 
 Typical workflow:
 
@@ -77,36 +77,36 @@ Typical workflow:
 5. Evaluate on temporally separated data.
 6. Plot predictions and report error metrics.
 
-## 🧮 Mathematics
+## Mathematics
 
-The core recurrence is `h_t = f(x_t, h_{t-1}; θ)`. LSTM gates control state transitions through sigmoid and elementwise operations. Training uses the chain rule and backpropagation through time; numerical behavior depends on sequence length, initialization, learning rate, and activation saturation.
+The core recurrence is `h_t = f(x_t, h_{t-1}; θ)`. LSTM gates control state transitions through sigmoid and elementwise operations. Training uses the chain rule and backpropagation through time; numerical behaviour depends on sequence length, initialisation, learning rate, and activation saturation.
 
-## 🧪 Testing / Evaluation
+## Testing / Evaluation
 
 Evaluation should avoid future-data leakage and should report metrics on a held-out chronological period. Preprocessing must handle zero-valued baselines and non-finite values.
 
-## 🚧 Limitations & Future Work
+## Limitations & Future Work
 
-- Modernize the TensorFlow stack
+- Modernise the TensorFlow stack
 - Add reproducible environment locking
 - Compare against GRU/Transformer baselines
 - Add walk-forward evaluation
 - Quantify uncertainty
 - Add systematic hyperparameter experiments
 
-## 📚 References
+## References
 
 - [Original article](https://www.altumintelligence.com/articles/a/Time-Series-Prediction-Using-LSTM-Deep-Neural-Networks)
 - [Video walkthrough](https://www.youtube.com/watch?v=2np77NOdnwk)
 
-## 🤝 Contributing
+## Contributing
 
 Preserve chronological evaluation, document preprocessing, and add tests for numerical edge cases and data leakage.
 
-## 📄 License
+## License
 
 See repository license information.
 
-## 👨‍💻 Author
+## Author
 
-**Matin Odoom**
+**A. Matin Odoom**

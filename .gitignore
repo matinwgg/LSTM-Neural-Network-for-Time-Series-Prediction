@@ -1,2 +1,10 @@
-*.pyc
+__pycache__/
+*.py[cod]
 .idea/
+.venv/
+.pytest_cache/
+.coverage
+htmlcov/
+saved_models/
+*.keras
+*.h5
